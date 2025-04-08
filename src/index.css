@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased bg-cyber-dark text-white;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.neon-border {
+  position: relative;
+}
+
+.neon-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #00F0FF, #BD00FF, #FF0099, #0FF4FF);
+  border-radius: inherit;
+  z-index: -1;
+  animation: border-animate 4s linear infinite;
+}
+
+.section-gradient-1 {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(189, 0, 255, 0.1) 100%);
+}
+
+.section-gradient-2 {
+  background: linear-gradient(135deg, rgba(189, 0, 255, 0.1) 0%, rgba(255, 0, 153, 0.1) 100%);
+}
+
+.section-gradient-3 {
+  background: linear-gradient(135deg, rgba(255, 0, 153, 0.1) 0%, rgba(15, 244, 255, 0.1) 100%);
+}
+
+.section-gradient-4 {
+  background: linear-gradient(135deg, rgba(15, 244, 255, 0.1) 0%, rgba(59, 0, 255, 0.1) 100%);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px currentColor;
+}
+
+@keyframes border-animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cyber-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
+}
+
+.cyber-grid-dense {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.03) 1px, transparent 1px);
+}
+
+.fill-current {
+  fill: currentColor;
+}
+
+.hexagon-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' stroke-width='1' stroke='rgba(255,255,255,0.05)' fill='none'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hover-card {
+  transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+}
