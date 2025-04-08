@@ -13,7 +13,15 @@ import {
   Building2,
   Globe2,
   Rocket,
-  Shield
+  Shield,
+  Github,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+  ArrowRight
 } from 'lucide-react';
 
 function App() {
@@ -130,6 +138,33 @@ function App() {
       answer: "You own 100% of the rights to any image you generate using Imaginify. Our terms of service ensure that you have complete commercial and creative freedom with your creations."
     }
   ];
+
+  const footerLinks = {
+    product: [
+      { name: "Features", href: "#" },
+      { name: "Pricing", href: "#" },
+      { name: "API Access", href: "#" },
+      { name: "Enterprise", href: "#" },
+    ],
+    company: [
+      { name: "About Us", href: "#" },
+      { name: "Careers", href: "#" },
+      { name: "Blog", href: "#" },
+      { name: "Press Kit", href: "#" },
+    ],
+    resources: [
+      { name: "Documentation", href: "#" },
+      { name: "Tutorials", href: "#" },
+      { name: "Case Studies", href: "#" },
+      { name: "Community", href: "#" },
+    ],
+    legal: [
+      { name: "Privacy Policy", href: "#" },
+      { name: "Terms of Service", href: "#" },
+      { name: "Cookie Policy", href: "#" },
+      { name: "Licenses", href: "#" },
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-cyber-dark">
@@ -359,6 +394,145 @@ function App() {
           </button>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="relative pt-32 pb-16 overflow-hidden">
+        <div className="absolute inset-0 cyber-grid-dense opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-light/5 to-cyber-darker"></div>
+        
+        <div className="container relative">
+          {/* Newsletter Section */}
+          <div className="glass-strong rounded-3xl p-12 mb-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/10 via-neon-purple/10 to-neon-pink/10"></div>
+            <div className="relative">
+              <h3 className="text-3xl font-bold mb-4">Join the Neural Network</h3>
+              <p className="text-gray-300 mb-8 max-w-2xl">Stay connected with the latest quantum breakthroughs and AI innovations. No spam, just pure digital evolution.</p>
+              
+              <form className="flex gap-4 max-w-2xl">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 bg-cyber-darker border border-cyber-light rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-neon-blue transition-colors"
+                />
+                <button className="glass px-8 py-4 rounded-xl text-neon-blue hover:bg-neon-blue hover:text-cyber-dark transition-all duration-300 flex items-center gap-2">
+                  Subscribe
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </form>
+            </div>
+          </div>
+
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+            <div>
+              <h4 className="font-semibold text-lg mb-6 text-neon-blue">Product</h4>
+              <ul className="space-y-4">
+                {footerLinks.product.map((link, index) => (
+                  <li key={index}>
+                    <a href={link.href} className="text-gray-400 hover:text-white transition-colors">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-lg mb-6 text-neon-purple">Company</h4>
+              <ul className="space-y-4">
+                {footerLinks.company.map((link, index) => (
+                  <li key={index}>
+                    <a href={link.href} className="text-gray-400 hover:text-white transition-colors">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-lg mb-6 text-neon-pink">Resources</h4>
+              <ul className="space-y-4">
+                {footerLinks.resources.map((link, index) => (
+                  <li key={index}>
+                    <a href={link.href} className="text-gray-400 hover:text-white transition-colors">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-lg mb-6 text-neon-cyan">Legal</h4>
+              <ul className="space-y-4">
+                {footerLinks.legal.map((link, index) => (
+                  <li key={index}>
+                    <a href={link.href} className="text-gray-400 hover:text-white transition-colors">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Contact Information */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16 glass-strong rounded-2xl p-8">
+            <div className="flex items-center gap-4">
+              <Mail className="w-6 h-6 text-neon-blue" />
+              <div>
+                <p className="text-sm text-gray-400">Email</p>
+                <a href="mailto:contact@neural.ai" className="hover:text-neon-blue transition-colors">
+                  contact@neural.ai
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <Phone className="w-6 h-6 text-neon-purple" />
+              <div>
+                <p className="text-sm text-gray-400">Phone</p>
+                <a href="tel:+1234567890" className="hover:text-neon-purple transition-colors">
+                  +1 (234) 567-890
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <MapPin className="w-6 h-6 text-neon-pink" />
+              <div>
+                <p className="text-sm text-gray-400">Location</p>
+                <p className="hover:text-neon-pink transition-colors">
+                  Quantum Valley, CA 94103
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-cyber-light">
+            <p className="text-gray-400 mb-4 md:mb-0">
+              © 2025 Neural. All rights reserved.
+            </p>
+
+            <div className="flex gap-6">
+              <a href="#" className="text-gray-400 hover:text-neon-blue transition-colors">
+                <Github className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-neon-purple transition-colors">
+                <Twitter className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-neon-pink transition-colors">
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-neon-cyan transition-colors">
+                <Instagram className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
